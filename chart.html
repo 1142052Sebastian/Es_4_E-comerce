@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chart</title>
     <link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css” rel=”nofollow” integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”>        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <script 
+        src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script language="javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> 
+    <script language="javascript" src="chart-script.js"></script>
     <!--
       Need a visual blank slate?
       Remove all code in `styles.css`!
@@ -45,27 +53,17 @@
           </div>
               <!-- -----/Menu Navbar------ -->
             <div class="container">
-                <div class="base inline-block">
-                    <div class="chart-table">
-                        <img src="img/iphone-8.png"class="chart-product-image">
-                        <p class="chart-product-title">Iphone 8</p>
-                        <p class="chart-rpduct-descrpition">una descrizione spiccia per capire il prodotto che tipo di prodotto è</p>
-                        <p class="chart-product-rate">4.5/5</p>
-                        <p class="chart-product-price">999.99€</p>
-                        <input type="number" min="1" value="1" class="chart-product-qt">
-                        <button id="chart-product-remove">Remove</button>
-<!-- Product 2 --></div>
-                    <div class="chart-table">
-                        <img src="img/iphone-8.png"class="chart-product-image">
-                        <p class="chart-product-title">Iphone 8</p>
-                        <p class="chart-rpduct-descrpition">una descrizione spiccia per capire il prodotto che tipo di prodotto è</p>
-                        <p class="chart-product-rate">4.5/5</p>
-                        <p class="chart-product-price">999.99€</p>
-                        <input type="number" min="1" value="1" class="chart-product-qt">
-                        <button id="chart-product-remove">Remove</button>
-                    </div>
-                </div>
-                </div>
+              <table id="product-table" class="display" style="width:75%">
+                <thead>
+                    <tr>
+                        <th>Icona</th>
+                        <th>Titolo</th>
+                        <th>Descrizione</th>
+                        <th>Prezzo</th>
+                        <th>Sconto</th>
+                    </tr>
+                </thead>
+              </table>
             </div>
     
 
