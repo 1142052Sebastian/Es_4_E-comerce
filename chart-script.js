@@ -23,6 +23,8 @@ async function collect_products() {
             { data: 'discountPercentage'}
         ]
     } );
+
+
 }
 
 /* DOM template datatable 
