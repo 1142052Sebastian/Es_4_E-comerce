@@ -1,4 +1,5 @@
 let products=[];
+let categories=[];
 let domProduct;
 let api_url='https://dummyjson.com/products';
 
@@ -10,7 +11,6 @@ async function collect_products() {
     const res = await fetch(api_url);
     const obj = await res.json();
     products = obj.products;
-    console.log(products);
     for(var i=0; i<products.length; i++){
         domProduct=
         '<div id="product-'+i+'" class="container-singleProduct">'+
@@ -19,9 +19,28 @@ async function collect_products() {
         '<p class="product-color">'+products[i].title+'</p>'+
         '<p class="product-price">'+products[i].price+'</p>'+
         '</div>';
-        $('#grid-products').append(domProduct);
-        console.log(domProduct);
+        $('#grid-products-1').append(domProduct);
     }
+    products.forEach(element => {
+        categories.push(element.category);
+        categories=[...new Set(categories)];
+    });
+    categories.forEach(element =>{
+        $('#header-categories').append('<option value='+element+'>'+element+'</option>');
+        $('#slider-categories').append('<option value='+element+'>'+element+'</option>');
+    });
+    products.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+    for(var i=0; i<9; i++){
+        domProduct=
+        '<div id="product-'+i+'" class="container-singleProduct">'+
+        '<img src="'+products[i].images[0]+'" class="product-img">'+
+        '<p class="product-title">'+products[i].title+'</p>'+
+        '<p class="product-color">'+products[i].title+'</p>'+
+        '<p class="product-price">'+products[i].price+'</p>'+
+        '</div>';
+        $('#grid-products-2').append(domProduct);
+    }
+    
 }
 
 /* DOM template datatable 
