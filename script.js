@@ -1,8 +1,40 @@
-console.log('Hello!');
-$('#product-0').append(
-    "<img src="img/iphone-8.png" class="product-img">
-    <h3 class="product-title">Iphone 8</h3>
-    <h4 class="product-color">White</h4>
-    <h5 class="product-price">999.99€</h5>
-    <div class="product-hover-option"></div>"
-)
+let products=[];
+let domProduct;
+let api_url='https://dummyjson.com/products';
+
+(()=>{
+    collect_products();
+})();
+
+async function collect_products() {
+    const res = await fetch(api_url);
+    const obj = await res.json();
+    products = obj.products;
+    console.log(products);
+    for(var i=0; i<products.length; i++){
+        domProduct=
+        '<div id="product-'+i+'" class="container-singleProduct">'+
+        '<img src="'+products[i].images[0]+'" class="product-img">'+
+        '<p class="product-title">'+products[i].title+'</p>'+
+        '<p class="product-color">'+products[i].title+'</p>'+
+        '<p class="product-price">'+products[i].price+'</p>'+
+        '</div>';
+        $('#grid-products').append(domProduct);
+        console.log(domProduct);
+    }
+}
+
+/* DOM template datatable 
+    <table id="product-table" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Icona</th>
+                <th>Titolo</th>
+                <th>Descrizione</th>
+                <th>Prezzo</th>
+                <th>Sconto</th>
+            </tr>
+        </thead>
+    </table>
+*/
+
