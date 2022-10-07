@@ -60,7 +60,7 @@ async function collect_products() {
 }
 $('#header-categories').change(function(){
     $('#grid-products-1').children().show();
-    if($('#header-categories').val()!='All categories'){
+    if($('#header-categories').val()!='tech'){
         $('#grid-products-1')
         .children()
         .filter(function(){
@@ -69,9 +69,7 @@ $('#header-categories').change(function(){
         .hide();
     }
     else{
-        $('#grid-products-1')
-        .children()
-        .show();
+        $('#grid-products-1').children().show();
     }
 });
 
