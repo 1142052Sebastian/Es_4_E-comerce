@@ -1,12 +1,26 @@
 let products=[];
 let categories=[];
 let domProduct;
+let username;
 let api_url='https://dummyjson.com/products';
 
 (()=>{
+    qs();
     collect_products();
 })();
-
+var qsParm = new Array();
+function qs() {
+    var query = window.location.search.substring(1);
+    var parms = query.split('&');
+    for (var i=0; i < parms.length; i++) {
+        var pos = parms[i].indexOf('=');
+        if (pos > 0) {
+            var key = parms[i].substring(0, pos);
+            var val = parms[i].substring(pos + 1);
+            username=val;
+        }
+    }
+}
 async function collect_products() {
     const res = await fetch(api_url);
     const obj = await res.json();
@@ -40,7 +54,6 @@ async function collect_products() {
         '</div>';
         $('#grid-products-2').append(domProduct);
     }
-    
 }
 
 /* DOM template datatable 
