@@ -8,6 +8,7 @@ let api_url='https://dummyjson.com/products';
     qs();
     collect_products();
 })();
+
 var qsParm = new Array();
 function qs() {
     var query = window.location.search.substring(1);
@@ -21,13 +22,14 @@ function qs() {
         }
     }
 }
+
 async function collect_products() {
     const res = await fetch(api_url);
     const obj = await res.json();
     products = obj.products;
     for(var i=0; i<products.length; i++){
         domProduct=
-        '<div id="product-'+i+'" class="container-singleProduct">'+
+        '<div id="product-'+i+'" class="container-singleProduct" data-value="'+products[i].category+'">'+
         '<img src="'+products[i].images[0]+'" class="product-img">'+
         '<p class="product-title">'+products[i].title+'</p>'+
         '<p class="product-color">'+products[i].title+'</p>'+
@@ -55,18 +57,14 @@ async function collect_products() {
         $('#grid-products-2').append(domProduct);
     }
 }
-
-/* DOM template datatable 
-    <table id="product-table" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>Icona</th>
-                <th>Titolo</th>
-                <th>Descrizione</th>
-                <th>Prezzo</th>
-                <th>Sconto</th>
-            </tr>
-        </thead>
-    </table>
-*/
+// $('#header-categories').change(function(){
+//     if($('#header-categories').value()!='All categories'){
+//         $('#grid-products-1')
+//         .children()
+//         .filter(function(){
+//             return $(this).data('value') === $('header-categories');
+//         })
+//         .hide();
+//     }
+// })
 
