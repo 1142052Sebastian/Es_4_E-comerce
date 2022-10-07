@@ -30,7 +30,7 @@ async function collect_products() {
     for(var i=0; i<products.length; i++){
         domProduct=
 
-        '<div id="product-'+i+'" class="container-singleProduct" data-value="'+products[i].category+'">'+
+        '<div id="product-'+i+'" class="container-singleProduct" data-value="'+products[i].category+'">'+'<div id="container-product-img">'+
         '<img src="'+products[i].images[0]+'" class="product-img">'+
         '</div>'+
         '<p class="product-title">'+products[i].title+'</p>'+
