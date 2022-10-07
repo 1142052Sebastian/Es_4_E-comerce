@@ -15,7 +15,7 @@ async function collect_products() {
         columns: [
             {data: 'images',
             "render": function (data) {
-                return '<img img src="' + data[0] + '" " width="80px">';
+                return '<img img src="' + data[2] + '" " width="80px">';
             }},
             { data: 'title' },
             { data: 'description' },
@@ -23,8 +23,6 @@ async function collect_products() {
             { data: 'discountPercentage'}
         ]
     } );
-
-
 }
 
 /* DOM template datatable 
