@@ -11,6 +11,7 @@
 .inline-block{
   display:inline-block;
 }
+
 .base{
   background: green;
   width: 1000px;
@@ -244,21 +245,63 @@ p{
   margin-top: 30px;
   padding: 10px;
 }
+.container-product-action{
+  display: inline-flex;
+  position: relative;
+  justify-content:space-around;
+  align-items: center;
+  width: 80%;
+  height: 50px;
+  border-radius: 50px;
+  background-color: purple;
+  opacity: 0%;
+  transition: 0.7s; 
+  margin-top: 60px; 
+}
+.container-product-action:hover{
+  opacity: 100%;  
+  margin-top: 20px;
+}
+.product-action-button{
+  background-color:rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  transition: 0.4s;
+  padding:10px 20px;
+  border-radius: 40px;
+}
+.product-action-button:hover{
+  background-color:rgba(0, 0, 0, 0.3);
+
+}
 .product-img{
-  width:90%;
+  width:auto;
+  max-height: 240px;
   height: auto;
+  transition-duration:0.4s;
+  transform: scale(0.90);
+}
+#container-product-img{
+  overflow: hidden;
+  transition: 0.4s;
+}
+#container-product-img:hover .product-img{
+  transform: scale(1);
 }
 .product-title
 {
-  font-size: 25px;
-  margin-bottom: 10px;
+  font-size: 23px;
+  margin-bottom: 8px;
+  margin-top: 6px;
 }
 .product-color{
   color: grey;
+  font-size: 14px;
   
 }
 .product-price{
-  font-size: 20px;
+  font-size: 23px;
+  margin-top: 5px;
 }
 
 /* Footer */
@@ -305,7 +348,7 @@ p{
 }
 
 
-@media screen and (max-width:1050px){
+@media screen and (max-width:1050px) and (min-width:780px){
   .base{
     background-color: orange;
     width: 720px;
@@ -325,6 +368,14 @@ p{
     font-size: 20px;
   }
   .header-logo{
-    src: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/2214px-How_to_use_icon.svg.png);
+    width: 70px;
+    content:url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/2214px-How_to_use_icon.svg.png);
+  }
+}
+@media screen and (min-width:10px) and (max-width:790px){
+  .base{
+    background-color: blue;
+    width: 400px;
+    padding: 20px;
   }
 }
