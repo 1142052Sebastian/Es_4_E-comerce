@@ -29,8 +29,7 @@ async function collect_products() {
     products = obj.products;
     for(var i=0; i<products.length; i++){
         domProduct=
-
-        '<div id="product-'+i+'" class="container-singleProduct" data-value="'+products[i].category+'">'+'<div id="container-product-img">'+
+        '<div id="product-'+i+'" class="container-singleProduct" data-category="'+products[i].category+'">'+'<div id="container-product-img">'+
         '<img src="'+products[i].images[0]+'" class="product-img">'+
         '</div>'+
         '<p class="product-title">'+products[i].title+'</p>'+
@@ -59,14 +58,20 @@ async function collect_products() {
         $('#grid-products-2').append(domProduct);
     }
 }
-// $('#header-categories').change(function(){
-//     if($('#header-categories').value()!='All categories'){
-//         $('#grid-products-1')
-//         .children()
-//         .filter(function(){
-//             return $(this).data('value') === $('header-categories');
-//         })
-//         .hide();
-//     }
-// })
+$('#header-categories').change(function(){
+    $('#grid-products-1').children().show();
+    if($('#header-categories').val()!='All categories'){
+        $('#grid-products-1')
+        .children()
+        .filter(function(){
+            return $(this).data('category')!=$('#header-categories').val();
+        })
+        .hide();
+    }
+    else{
+        $('#grid-products-1')
+        .children()
+        .show();
+    }
+});
 
