@@ -1,5 +1,4 @@
 @import url('http://fonts.cdnfonts.com/css/roboto');
-@import "font-awesome";
 *{
   margin-top: 0px;
   margin-left: 0px;
@@ -306,6 +305,26 @@ p{
 }
 
 
-@media screen {
-  
+@media screen and (max-width:1050px){
+  .base{
+    background-color: orange;
+    width: 720px;
+    padding: 30px;
+  }
+  #top-adv-text{
+    font-size: 20px;
+    line-height: 30px;
+  }
+  #top-adv-button-ShopNow{
+    width: 160px;
+  }
+  #top-adv-button-Close{
+    /* display: none; */
+  }
+  .navbar-text{
+    font-size: 20px;
+  }
+  .header-logo{
+    src: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/2214px-How_to_use_icon.svg.png);
+  }
 }
