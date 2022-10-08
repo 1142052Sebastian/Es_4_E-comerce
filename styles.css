@@ -57,6 +57,7 @@ p{
 }
 #top-adv-text{
   margin-bottom: 0px;
+
 }
 
 /* ----- advertising class ---- */
@@ -357,12 +358,26 @@ p{
   #top-adv-text{
     font-size: 20px;
     line-height: 30px;
+    width:500px;
+  }
+  .container-slider{
+    margin-left: -300px;
   }
   #top-adv-button-ShopNow{
     width: 160px;
   }
   #top-adv-button-Close{
     /* display: none; */
+  }
+  .navbar{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .grid-products{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
   }
   .navbar-text{
     font-size: 20px;
@@ -371,11 +386,77 @@ p{
     width: 70px;
     content:url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/2214px-How_to_use_icon.svg.png);
   }
+  .sales-base{
+    margin:5px
+  }
+  #title-1{
+    padding:10px;
+  }
 }
 @media screen and (min-width:10px) and (max-width:790px){
   .base{
     background-color: blue;
+    border: solid white 2px;
     width: 400px;
     padding: 20px;
+  }
+  #top-adv-button-Close{
+    display: none;
+  }
+  .base-text{
+    line-height: 20px;
+    font-size: 14px;
+    width: 250px;
+
+  }
+  .navbar-text{
+    transition: 0.3s;
+    width: 20px;
+  }
+
+  #navbar-phoneNumber:hover .navbar-text{
+    width: auto;
+  }
+  .container-slider{
+    margin-left: -300px;
+  }
+  .title{
+    font-size: 36px;
+  }
+  #slider-title{
+    margin-top: 20px;
+    width: 300px;
+  }
+  .container-slider{
+    margin-top: 100px;
+  }
+  .slider-img{
+    margin-left: -300px;
+  }
+  #sales-banner{
+    display: inline-block;
+  }
+  .sales-base{
+    width: 100%;
+    margin-top:15px
+  }
+  .base{
+    padding:10px;
+  }
+  .grid-products{
+    grid-template-columns: 1fr;
+
+  }
+  .header-logo{
+    display: none;
+  }
+  #Hheder-input-container{
+    width: 392px;
+  }
+  #header-chart{
+    display: none;
+  }
+  #header{
+    padding: 10px;
   }
 }
