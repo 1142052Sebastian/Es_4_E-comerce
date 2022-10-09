@@ -9,8 +9,8 @@
       Remove all code in `styles.css`!
     -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <link href="font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6b1b108c86.js" crossorigin="anonymous"></script>
+    <!-- <link href="font-awesome.min.css" rel="stylesheet"> -->
     <link href="fontawesome-free-6.2.0-web/css/all.min.css">
   </head>
   <body>
@@ -19,40 +19,40 @@
       <div id="top-adv" class="base top-adv inline-flex">
       <p id="top-adv-text" class="base-text">Get a big discount for all technology Gadgets. Get 20% of gadget discount</p>
       <button id="top-adv-button-ShopNow">Shop Now</button>
-      <button id="top-adv-button-Close">X</button>
+      <!-- <button id="top-adv-button-Close" onclick="ChisuraPopup(){}">X</button> -->
       </div>
     </div>
     <!--/Top advertising div -->
 
     <!-- Menu Navbar -->
-    <div id="container-navbar" class="container sticky">
+    <div id="container-navbar" class="container">
       <div id="navbar" class="base navbar inline-flex">
         <div id="navbar-phoneNumber">
-          <img src="icon/telephone.svg" class="icon">
+          <i class="fa-solid fa-phone icon"></i>
           <p class="navbar-text" id="navbar-tel"> +39 235148574</p>
         </div>
           <span class="vertical-line"></span>
         <div id="navbar-phoneNumber">
-          <img src="icon/telephone.svg" class="icon">
+          <i class="fa-solid fa-envelope-open-text icon"></i>
           <a href="contact.html" class="base-link"><p class="navbar-text"> examplequalcosa@bhf.com</p></a>
         </div>
         <span class="vertical-line"></span>
         <div id="navbar-phoneNumber">
-          <img src="icon/telephone.svg" class="icon">
+          <i class="fa-solid fa-house icon"></i>
          <a href="index.html" class="base-link"> <p class="navbar-text"> Home</p></a>
         </div>
         
-        <span class="vertical-line"></span>
-        <div id="navbar-phoneNumber">
+        <!-- <span class="vertical-line"></span> -->
+        <!-- <div id="navbar-phoneNumber">
           <img src="icon/telephone.svg" class="icon">
           <a href="login.html" class="base-link"><p class="navbar-text">Login</p></a>
-        </div>
+        </div> -->
       </div>
     </div>
         <!-- -----/Menu Navbar------ -->
 
         <!-- Header Menu -->
-    <div id="container-header" class="container">
+    <div id="container-header" class="container sticky">
       <div id="header" class="base inline-flex">
         <div id="header-container-logo">
           <img src="icon/logo.png" class="header-logo">
@@ -67,8 +67,8 @@
             <button id="header-button-submit">SEARCH</button>
         </div>
         <div id="header-chart">
-          <p>chart in this position
-          </p>
+          <a href="login.html" class="base-link"><p class="navbar-text">Login</p></a>
+
         </div>
       </div>
     </div>
@@ -100,16 +100,12 @@
     </div>
     <!--  -->
 <!-- sales banner -->
-    <div id="container-salesbanner" class="container">
+    <!-- <div id="container-salesbanner" class="container">
       <div id="sales-banner" class="base inline-flex">
         <div id="sales-content-1" class="sales-base">
           <img id="sales-content-1-img"src="">
           <p>Cose</p>
-          <div class="container-product-action">
-            <button id="product-acquista" class="product-action-button">Compra</button>
-            <span class="vertical-line"></span>
-            <button id="product-acquista" class="product-action-button"> Valuta</button>
-          </div>
+
         </div>
         <div id="sales-content-2" class="sales-base">
           <img id="sales-content-2-img"src="">
@@ -122,7 +118,7 @@
 
       </div>
 
-    </div>
+    </div> -->
     <!-- sales banner -->
 
     <!-- First title -->
@@ -168,14 +164,14 @@
 <!-- Brands -->
 <div class="container">
   <div class="base inline-flex center-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="brand-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/ASUS_Logo.svg/1280px-ASUS_Logo.svg.png" class="brand-img">
+    <img src="https://i.pinimg.com/originals/e2/0b/af/e20baf7ffd66c48fec7a86cf8509a726.png" class="brand-img">
+    <img src="data:image/png;base64,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" class="brand-img">
+    <!-- <img src="img/iphone-8.png" class="brand-img">
     <img src="img/iphone-8.png" class="brand-img">
     <img src="img/iphone-8.png" class="brand-img">
-    <img src="img/iphone-8.png" class="brand-img">
-    <img src="img/iphone-8.png" class="brand-img">
-    <img src="img/iphone-8.png" class="brand-img">
-    <img src="img/iphone-8.png" class="brand-img">
-    <img src="img/iphone-8.png" class="brand-img">
-    <img src="img/iphone-8.png" class="brand-img">
+    <img src="img/iphone-8.png" class="brand-img"> -->
   </div>
 </div>
 
@@ -184,14 +180,12 @@
 
   <div class="container">
     <div class="base inline-flex">
-      cose da mettere come footer
+      Copyright © HBF 2022 . All Right Reserved.
     </div>
   </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
     <script type="module" src="script.js"></script>
-
-
   </body>
 </html>

@@ -35,7 +35,15 @@ async function collect_products() {
         '<p class="product-title">'+products[i].title+'</p>'+
         '<p class="product-color">'+products[i].title+'</p>'+
         '<p class="product-price">'+products[i].price+'</p>'+
-        '</div>';
+        '<div class="container-product-action">'+
+        '<button id="product-acquista" value="'+i+'" class="product-action-button">Compra</button>'+
+        '<span class="vertical-line"></span>'+
+        '<button id="product-valuta" value="'+i+'"class="product-action-button">Valuta</button>'+
+        '<span class="vertical-line"></span>'+
+        '<button id="product-info" value="'+i+'"class="product-action-button">Info</button>'+
+        '</div>'+
+        '</div>'
+
         $('#grid-products-1').append(domProduct);
     }
     products.forEach(element => {
@@ -49,12 +57,20 @@ async function collect_products() {
     products.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
     for(var i=0; i<9; i++){
         domProduct=
-        '<div id="product-'+i+'" class="container-singleProduct">'+
+        '<div id="product-'+i+'" class="container-singleProduct" data-category="'+products[i].category+'">'+'<div id="container-product-img">'+
         '<img src="'+products[i].images[0]+'" class="product-img">'+
+        '</div>'+
         '<p class="product-title">'+products[i].title+'</p>'+
         '<p class="product-color">'+products[i].title+'</p>'+
         '<p class="product-price">'+products[i].price+'</p>'+
-        '</div>';
+        '<div class="container-product-action">'+
+        '<button id="product-acquista" value="'+i+'" class="product-action-button">Compra</button>'+
+        '<span class="vertical-line"></span>'+
+        '<button id="product-valuta" value="'+i+'"class="product-action-button">Valuta</button>'+
+        '<span class="vertical-line"></span>'+
+        '<button id="product-info" value="'+i+'"class="product-action-button">Info</button>'+
+        '</div>'+
+        '</div>'
         $('#grid-products-2').append(domProduct);
     }
 }
@@ -72,4 +88,9 @@ $('#header-categories').change(function(){
         $('#grid-products-1').children().show();
     }
 });
+
+function ChisuraPopup(){
+    $('#container-top-adv').hide();
+    console.log("Ciao")
+};
 

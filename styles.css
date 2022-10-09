@@ -13,9 +13,11 @@
 }
 
 .base{
-  background: green;
+  /* background: green; */
   width: 1000px;
-  border: solid blue 2px;
+  /* border: solid blue 2px; */
+  border-bottom: solid grey 1px;
+  background-color: white;
 }
 p{
   margin-bottom: 0px;
@@ -33,10 +35,13 @@ p{
 }
 /* advertising class */
 .container{
-  background: red;
+  /* background: red; */
   margin-top: 0px;
   margin-left: 0px;
   margin: 0px;
+}
+#container-top-adv{
+  background-image: url(img/bg_adv.webp);
 }
 .top-adv{
   height: 45px;
@@ -44,6 +49,7 @@ p{
   align-items: center;
   line-height: 45px;
   padding: 10px 0px 10px 0px;
+  background-color: rgba(0,0,0,0);
 }
 #top-adv-button-ShopNow{
   border-radius: 30px;
@@ -66,7 +72,7 @@ p{
 .navbar{
   height: 57px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .icon{
   width: 20px;
@@ -78,7 +84,7 @@ p{
   align-items: center;
   line-height: 40px;
   margin-bottom: 0px;
-  background: purple;
+  /* background: purple; */
   height: 40px;
 }
 .vertical-line{
@@ -87,6 +93,11 @@ p{
 }
 .navbar-text{
   margin-bottom: 0px;
+  color:grey;
+  transition: 1s;
+}
+.navbar-text:hover{
+  color: black;
 }
 .sticky {
 	/* background-color: #ffffff; */
@@ -99,9 +110,9 @@ p{
 
 #header{
   height: 54;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: space-around;
   align-items: center;
 }
 .header-logo{
@@ -113,12 +124,13 @@ p{
 }
 #header-input-container{
   width: 570px;
-  border: 2px solid grey;
+  /* border: 2px solid grey; */
   padding: 10px 0px;
   border-radius: 5px;
   align-items: center;
   display: inline-flex;
   justify-content: space-evenly;
+  background-color: #bcf2ff;
 }
 #header-categories{
   width: 150px;
@@ -146,7 +158,7 @@ p{
 .slider-base{
   width: 100%;
   height: 648px;
-  background-color: orange;
+  background-color: #bcf2ff;
   display: inline-block;
   z-index: 0;
 }
@@ -240,39 +252,48 @@ p{
 }
 .container-singleProduct{
   width: 270px;
-  height: 371px;
+  height: 420px;
+  padding: 10px;
+  padding-bottom: 30px;
   background-color: #fff;
   border-radius: 20px;
   margin-top: 30px;
   padding: 10px;
+  border: 2px solid #eeeeee;
+  background-color: rgba(0, 0, 0, 0.05);
 }
+
 .container-product-action{
   display: inline-flex;
-  position: relative;
+  /* position: relative; */
   justify-content:space-around;
   align-items: center;
-  width: 80%;
+  width: 90%;
   height: 50px;
   border-radius: 50px;
-  background-color: purple;
+  background-color: white;
   opacity: 0%;
   transition: 0.7s; 
-  margin-top: 60px; 
+  /* margin-top: 60px;  */
+  background-color: white;
 }
-.container-product-action:hover{
+.container-singleProduct:hover .container-product-action{
   opacity: 100%;  
-  margin-top: 20px;
 }
 .product-action-button{
   background-color:rgba(0, 0, 0, 0);
   border: none;
-  color: white;
+  color: grey;
   transition: 0.4s;
   padding:10px 20px;
   border-radius: 40px;
 }
 .product-action-button:hover{
   background-color:rgba(0, 0, 0, 0.3);
+
+}
+.product-action-button:active{
+  background-color:rgba(0, 0, 0, 0.7);
 
 }
 .product-img{
@@ -303,6 +324,7 @@ p{
 .product-price{
   font-size: 23px;
   margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 /* Footer */
@@ -310,6 +332,7 @@ p{
   width: 8%;
   height: auto;
   margin: 0 10px;
+  padding: 10px;
 }
 
 
@@ -331,7 +354,7 @@ p{
   padding: 20px;
 }
 #chart-product-remove{
-  background-color: red;
+  /* background-color: red; */
   color:white;
   border: none;
   padding: 10px;
@@ -351,7 +374,7 @@ p{
 
 @media screen and (max-width:1050px) and (min-width:780px){
   .base{
-    background-color: orange;
+    /* background-color: #bcf2ff; */
     width: 720px;
     padding: 30px;
   }
@@ -392,8 +415,8 @@ p{
 }
 @media screen and (min-width:10px) and (max-width:790px){
   .base{
-    background-color: blue;
-    border: solid white 2px;
+    /* background-color: blue;
+    border: solid white 2px; */
     width: 400px;
     padding: 20px;
   }
@@ -409,10 +432,12 @@ p{
   .navbar-text{
     transition: 0.3s;
     width: 20px;
+    display: none;
   }
 
   #navbar-phoneNumber:hover .navbar-text{
     width: auto;
+    display:block;
   }
   .container-slider{
     margin-left: -300px;
@@ -455,5 +480,12 @@ p{
   }
   #header{
     padding: 10px;
+  }
+  #header-input-container{
+    width:390px;
+    height: 50%;
+  }
+  #header{
+    height: 30px;
   }
 }
