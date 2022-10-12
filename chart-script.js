@@ -1,26 +1,24 @@
 let products=[];
-let api_url='https://dummyjson.com/products';
+let api_url='https://dummyjson.com/carts';
+
 
 (()=>{
     collect_products();
+    console.log(api_url);
 })();
 
 async function collect_products() {
     const res = await fetch(api_url);
     const obj = await res.json();
-    products = obj.products;
+    products = obj.carts[localStorage.getItem("loggedUserIndex")].products;
     console.log(products);
     $('#product-table').DataTable( {
         data: products,
         columns: [
-            {data: 'images',
-            "render": function (data) {
-                return '<img img src="' + data[2] + '" " width="80px">';
-            }},
             { data: 'title' },
-            { data: 'description' },
+            { data: 'quantity'},    
             { data: 'price' },
-            { data: 'discountPercentage'}
+            { data: 'discountPercentage'}  
         ]
     } );
 }

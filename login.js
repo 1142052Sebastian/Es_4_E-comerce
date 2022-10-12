@@ -7,6 +7,7 @@ let api_url='https://dummyjson.com/users';
 })();
 
 async function fill_users() {
+
     const res = await fetch(api_url);
     const obj = await res.json();
     users = obj.users;
@@ -17,23 +18,26 @@ async function fill_users() {
             password: element.password
         });
     });
+
     //utente aggiunto per comodità
     dictAuthentication.push({
         username: 'admin',
-        username: 'admin',
+        email: 'admin',
         password: 'ciao'
     })
+
+    console.log(dictAuthentication);
 }
 
-$('#tab-login').click( function(){
-    dictAuthentication.forEach(element => {
-       if(element.username==$('#loginName').val() || element.email==$('#loginName').val()){
-           if(element.password==$('#loginPassword').val()){
-                window.location = 'index.html?user=' + element.username;
-           }
-           else{
-               console.log("nope");
-           }
-       }
-    });
-})
+
+function signin_click(){
+    for(var i=0; i<dictAuthentication.length; i++){
+        if(dictAuthentication[i].username == $("#email").val() || dictAuthentication[i].email == $("#email").val()){
+            if(dictAuthentication[i].password == $("#password").val())
+            {
+                localStorage.setItem("loggedUserIndex", i+1);
+                window.location = "chart.html";
+            }
+        }
+    }
+}
