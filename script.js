@@ -89,6 +89,36 @@ $('#header-categories').change(function(){
     }
 });
 
+$('#header-inputbox').on("input",function(){
+    $('#grid-products-1>div:visible')
+    .filter(function(){
+        return $('#header-inputbox').val().trim().toLowerCase()!=
+        $('.product-title', this).text().slice(0,$('#header-inputbox').val().trim().length).toLowerCase();
+    })
+    .hide();
+    if($('#header-categories').val()!='tech'){
+        $('#grid-products-1>div')
+        .not(":visible")
+        .filter(function(){
+            return $(this).data('category')==$('#header-categories').val();
+        })
+        .filter(function(){
+            return $('#header-inputbox').val().trim().toLowerCase()==
+            $('.product-title', this).text().slice(0,$('#header-inputbox').val().trim().length).toLowerCase();
+        })
+        .show();
+    }
+    else{
+        $('#grid-products-1>div')
+        .not(":visible")
+        .filter(function(){
+            return $('#header-inputbox').val().trim().toLowerCase()==
+            $('.product-title', this).text().slice(0,$('#header-inputbox').val().trim().length).toLowerCase();
+        })
+        .show();
+    }
+})
+
 function ChisuraPopup(){
     $('#container-top-adv').hide();
     console.log("Ciao")
