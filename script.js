@@ -7,6 +7,22 @@ let api_url='https://dummyjson.com/products';
 (()=>{
     qs();
     collect_products();
+    
+    $(window).on('load', () => {
+        console.log(localStorage.getItem("loggedUsername"));
+        if(localStorage.getItem("loggedUserIndex") >= 0){
+            $("#username").text(localStorage.getItem("loggedUsername"));
+            $("#login-redirect").attr("href", "chart.html");
+        }
+        else
+        {
+            $("#username").text("Login");
+            $("#login-redirect").attr("href", "login.html");
+
+            localStorage.setItem("loggedUsername", "");
+            localStorage.setItem("loggedUserIndex", -1);
+        }
+    });
 })();
 
 var qsParm = new Array();
@@ -124,3 +140,40 @@ function ChisuraPopup(){
     console.log("Ciao")
 };
 
+var map = L.map('map', {
+    zoomControl: false,
+    dragging: false,
+    touchZoom: false,
+    doubleClickZoom: false,
+    scrollWheelZoom: false,
+    boxZoom: false,
+    keyboard: false
+}).setView([45.548739, 11.547787], 13);;
+
+var gl = L.mapboxGL({
+  attribution: "\u003ca href=\"https://carto.com/\" target=\"_blank\"\u003e\u0026copy; CARTO\u003c/a\u003e \u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+  style: 'https://api.maptiler.com/maps/voyager/style.json?key=zrkvEbFMx4ryGPzExE4m'
+}).addTo(map);
+
+
+
+var obj;
+
+fetch('https://dummyjson.com/products/categories')
+.then(res => res.json())
+.then(res => addMarkers(res));
+
+var coord = [[45.550783, 11.541953], [45.547719, 11.555815], [45.538702, 11.524057], [45.559499, 11.542597], [45.550003, 11.564226], 
+            [45.535215, 11.560450], [45.556854, 11.548605], [45.533293, 11.572208], [45.530888, 11.518650], [45.572960, 11.538219],
+            [45.550125, 11.549549], [45.546759, 11.519337], [45.525356, 11.558475], [45.553010, 11.554356], [45.544354, 11.574612],
+            [45.559501, 11.541309], [45.559020, 11.511097], [45.545076, 11.581821], [45.584014, 11.487064], [45.584495, 11.565685],
+        ];
+
+
+function addMarkers(response){
+    for(i = 0; i < coord.length; i++)
+    {
+        var marker = L.marker(coord[i]).addTo(map);
+        marker.bindPopup("Category: <br>" + response[i]).openPopup();
+    }
+}

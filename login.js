@@ -4,6 +4,7 @@ let api_url='https://dummyjson.com/users';
 
 (()=>{
     fill_users();
+    localStorage.setItem("loggedUserIndex", -1)
 })();
 
 async function fill_users() {
@@ -35,7 +36,8 @@ function signin_click(){
         if(dictAuthentication[i].username == $("#email").val() || dictAuthentication[i].email == $("#email").val()){
             if(dictAuthentication[i].password == $("#password").val())
             {
-                localStorage.setItem("loggedUserIndex", i+1);
+                localStorage.setItem("loggedUsername", dictAuthentication[i].username);
+                localStorage.setItem("loggedUserIndex", i);
                 window.location = "chart.html";
             }
         }

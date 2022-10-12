@@ -489,3 +489,10 @@ p{
     height: 30px;
   }
 }
+
+#map { 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 800px;
+  width: 900px;
+}

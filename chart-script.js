@@ -4,7 +4,10 @@ let api_url='https://dummyjson.com/carts';
 
 (()=>{
     collect_products();
-    console.log(api_url);
+    console.log(localStorage.getItem("loggedUserIndex"));
+    $(window).on('load', () => {
+        $(".username").text(localStorage.getItem("loggedUsername"));
+    });
 })();
 
 async function collect_products() {
@@ -22,6 +25,15 @@ async function collect_products() {
         ]
     } );
 }
+
+
+$(".logout-btn").click(
+    () => {
+        localStorage.setItem("loggedUserIndex", -1);
+        localStorage.setItem("loggedUsername", "");
+        $(".logout-btn").attr("href", "index.html");
+    }
+)
 
 /* DOM template datatable 
     <table id="product-table" class="display" style="width:100%">
